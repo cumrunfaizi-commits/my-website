@@ -1,0 +1,790 @@
+/* صفحه ثبت نام و تنظیمات کلی */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.register-page {
+
+    font-family: 'Vazirmatn', sans-serif;
+    min-height: 100vh;
+    color: #ffffff;
+    background-color: #061326;
+
+    background-image:
+        linear-gradient(
+            rgba(2, 10, 27, 0.48),
+            rgba(2, 10, 27, 0.62)
+        ),
+        url("image/register-desktop.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;padding: 50px 20px;
+
+}
+
+
+/*محفظه اصلی صفحه ثبت نام */
+
+.register-container {
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* کارت شیشه ای ثبت نام */
+
+.register-card {
+
+    width: 100%;
+
+    padding: 40px 45px;
+
+    background: rgba(9, 35, 72, 0.48);
+    border: 1px solid rgba(135, 205, 255, 0.28);
+    border-radius: 25px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 15px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* یه خط روشن بالای کارت */
+
+.register-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 10%;
+
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(100, 190, 255, 0.8),
+        transparent
+    );
+
+}
+
+
+/* بخش عنوان صفحه */
+
+.register-header {
+
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.register-header h1 {
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #ffffff;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 20px rgba(55, 165, 255, 0.4);
+
+}
+
+.register-header p {
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: rgba(225, 240, 255, 0.75);
+
+}
+
+
+/* دکمه های ثبت نام با گوگل و اپل */
+
+.social-register {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+.social-register button {
+
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+.google-register {
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #202124;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.google-register span {
+
+    font-size: 20px;
+    font-weight: 800;
+
+    color: #4285F4;
+
+}
+
+.apple-register {
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+}
+
+.apple-register span {
+
+    font-size: 23px;
+
+}
+
+.social-register button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* خط جدا کننده بین دکمه ها و فرم */
+
+.register-divider {
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0 30px;
+
+    color: rgba(220, 235, 255, 0.65);
+
+    font-size: 13px;
+
+}
+
+.register-divider::before,
+.register-divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: rgba(180, 215, 255, 0.25);
+
+}
+
+
+/* بخش های مختلف فرم ثبت نام */
+
+.register-form {
+
+    width: 100%;
+
+}
+
+.form-section {
+
+    margin-bottom: 30px;
+
+}
+
+.form-section h2 {
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #b8ddff;
+
+    margin-bottom: 20px;
+
+    padding-right: 12px;
+
+    border-right: 3px solid #36aaff;
+
+}
+
+
+/* چیدن ورودی ها کنار هم */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px 20px;
+
+}
+
+
+/* تنظیمات هر قسمت از ورودی ها */
+
+.input-group {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    min-width: 0;
+
+}
+
+.input-group label {
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #f0f7ff;
+
+}
+
+.input-group input {
+
+    width: 100%;
+    height: 49px;
+
+    padding: 0 15px;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    border: 1px solid rgba(155, 205, 255, 0.28);
+
+    background: rgba(5, 20, 43, 0.48);
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    transition: 0.3s ease;
+
+}
+
+.input-group input::placeholder {
+
+    color: rgba(205, 225, 245, 0.48);
+
+    font-size: 12px;
+
+}
+
+.input-group input:focus {
+
+    border-color: #45b4ff;
+
+    background: rgba(9, 42, 79, 0.7);
+
+    box-shadow:
+        0 0 0 3px rgba(45, 165, 255, 0.12),
+        0 0 15px rgba(45, 165, 255, 0.12);
+
+}
+
+
+/* تنظیمات قسمت انتخاب تاریخ */
+
+.input-group input[type="date"] {
+
+    color-scheme: dark;
+
+    cursor: pointer;
+
+}
+
+
+/* محفظه مربوط به رمز عبور */
+
+.password-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+.password-wrapper input {
+
+    padding-left: 65px;
+
+}
+
+
+/* دکمه نمایش و مخفی کردن رمز */
+
+.toggle-password {
+
+    position: absolute;
+
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #67c1ff;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+.toggle-password:hover {
+
+    color: #ffffff;
+
+}
+
+
+/* میزان قدرت رمز عبور */
+
+.password-strength {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+.strength-bar {
+
+    width: 100%;
+    height: 4px;
+
+    display: block;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+}
+
+.strength-text {
+
+    color: rgba(210, 230, 255, 0.6);
+
+    font-size: 11px;
+
+}
+
+
+/* بررسی یکی بودن رمزها */
+
+.password-match {
+
+    font-size: 11px;
+
+    color: #9ed5ff;
+
+}
+
+
+/* قوانین و شرایط ثبت نام */
+
+.register-terms {
+
+    margin: 25px 0;
+
+    color: rgba(230, 242, 255, 0.8);
+
+    font-size: 12px;
+
+}
+
+.register-terms label {
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+
+}
+
+.register-terms input {
+
+    width: 16px;
+    height: 16px;
+
+    accent-color: #219eff;
+
+    cursor: pointer;
+
+}
+
+.register-terms a {
+
+    color: #69c5ff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+.register-terms a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* دکمه نهایی ثبت نام */
+
+.register-submit {
+
+    width: 100%;
+    height: 53px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        110deg,
+        #0878d1,
+        #159ff5,
+        #0878d1
+    );
+
+    background-size: 200% 100%;
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.35s ease;
+
+    box-shadow:
+        0 6px 22px rgba(0, 130, 255, 0.25);
+
+}
+
+.register-submit:hover {
+
+    background-position: 100% 0;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 28px rgba(0, 145, 255, 0.4);
+
+}
+
+.register-submit:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* لینک برگشت به صفحه ورود */
+
+.login-link {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    color: rgba(225, 240, 255, 0.75);
+
+}
+
+.login-link a {
+
+    color: #65c2ff;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+.login-link a:hover {
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 12px rgba(80, 180, 255, 0.6);
+
+}
+
+
+/* تنظیمات صفحه برای تبلت */
+
+@media screen and (max-width: 768px) {
+
+    .register-page {
+
+        padding: 35px 18px;
+
+        background-attachment: scroll;
+
+    }
+
+    .register-container {
+
+        max-width: 600px;
+
+    }
+
+    .register-card {
+
+        padding: 35px 28px;
+
+        border-radius: 22px;
+
+    }
+
+    .register-header h1 {
+
+        font-size: 26px;
+
+    }
+
+}
+
+
+/* تنظیمات صفحه برای موبایل */
+
+@media screen and (max-width: 550px) {
+
+    .register-page {
+
+        padding: 22px 12px;
+
+        background-image:
+            linear-gradient(
+                rgba(2, 10, 27, 0.52),
+                rgba(2, 10, 27, 0.68)
+            ),
+            url("image/register-mobile.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+
+    }
+
+    .register-container {
+
+        width: 100%;
+
+    }
+
+    .register-card {
+
+        padding: 28px 20px;
+
+        border-radius: 19px;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+    }
+
+    .register-header {
+
+        margin-bottom: 25px;
+
+    }
+
+    .register-header h1 {
+
+        font-size: 23px;
+
+    }
+
+    .register-header p {
+
+        font-size: 12px;
+
+    }
+
+    .social-register {
+
+        grid-template-columns: 1fr;
+
+        gap: 11px;
+
+    }
+
+    .social-register button {
+
+        height: 48px;
+
+        font-size: 13px;
+
+    }
+
+    .register-divider {
+
+        margin: 23px 0;
+
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 19px;
+
+    }
+
+    .form-section h2 {
+
+        font-size: 15px;
+
+    }
+
+    .input-group label {
+
+        font-size: 13px;
+
+    }
+
+    .input-group input {
+
+        height: 47px;
+
+        font-size: 12px;
+
+    }
+
+    .register-submit {
+
+        height: 50px;
+
+        font-size: 14px;
+
+    }
+
+    .login-link {
+
+        flex-wrap: wrap;
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* تنظیمات برای گوشی های کوچیک */
+
+@media screen and (max-width: 360px) {
+
+    .register-page {
+
+        padding: 15px 9px;
+
+    }
+
+    .register-card {
+
+        padding: 24px 15px;
+
+    }
+
+    .register-header h1 {
+
+        font-size: 21px;
+
+    }
+
+    .register-divider {
+
+        font-size: 11px;
+
+    }
+
+}

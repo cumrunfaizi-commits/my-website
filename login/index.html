@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>       <!-- فقط کارو بگیر حالشو ببر -->
+<html lang="fa" dir="rtl">
+
+                <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                            <title>ورود به حساب کاربری</title>
+
+                            <link rel="stylesheet" href="login.css">
+                </head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+    <section class="login-card">
+
+            <!-- بخش هد یا کله سایت -->
+
+            <header class="login-header">
+
+            <h1>خوش آمدید</h1>
+
+            <p>
+             برای ورود به حساب کاربری خود، اطلاعاتتان را وارد کنید
+            </p>
+
+            </header>
+
+
+            <!-- فرم های ورودی برای صفحه ورودمون -->
+
+            <form class="login-form" action="#" method="post">
+
+                <!-- نام کاربری  -->
+
+                <div class="login-input-group">
+
+                <label for="username"> نام کاربری یا ایمیل</label>
+
+                <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="نام کاربری یا ایمیل خود را وارد کنید"
+                autocomplete="username"
+                required>
+
+                </div>
+
+
+                <!-- رمز عبور یکم سعی کن با جزغیاتش کنی اخر کار  -->
+
+                
+<div class="login-input-group">
+
+    <label for="password">رمز عبور</label>
+
+    <div class="login-password-wrapper">
+
+    <input
+    type="password"
+    id="password"
+    name="password"
+    placeholder="رمز عبور خود را وارد کنید"
+    autocomplete="current-password"
+    required
+        >
+
+        <button
+            type="button"
+            id="login-toggle-password"
+            aria-label="نمایش رمز عبور"
+            aria-pressed="false"
+        >
+            <svg class="eye-icon" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor"
+            stroke-width="1.8"
+             stroke-linecap="round"                        
+            stroke-linejoin="round">
+
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+                <circle cx="12" cy="12" r="3"/> <!-- این کد با کمک هوش مصنوعی ساخته شده  -->
+
+            </svg>
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- فراموشی رمز عبود  -->
+<div class="forgot-password">
+
+<a href="#"> رمز عبور خود را فراموش کرده‌اید؟</a>
+
+</div>
+
+
+<!-- دکمه ورود سعی کن خوشگلش کنی  -->
+<button type="submit" class="login-submit"> ورود به حساب کاربری</button>
+
+</form>
+
+
+<!-- دکمه ثبت نام -->
+
+<div class="login-register-link">
+
+<span>حساب کاربری ندارید؟</span>
+
+<a href="../register/register.html">ثبت‌نام کنید</a>
+
+</div>
+
+</section>
+
+    </main>
+<script src="login.js"></script>
+</body>
+
+</html>

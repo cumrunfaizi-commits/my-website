@@ -1,0 +1,525 @@
+
+/* صفحه ورود و تنظیمات کلی*/
+
+@font-face {
+    font-family: 'Vazirmatn';
+
+    src: url("font/vazirmatn-variablefont_wght.ttf")
+         format("truetype");
+
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.login-page {
+
+font-family: 'Vazirmatn', sans-serif;
+min-height: 100vh;
+color: #ffffff;
+background-color: #061326;
+background-image:
+ linear-gradient(
+ rgba(2, 10, 27, 0.48),
+ rgba(2, 10, 27, 0.62)
+),
+url("image/background.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+display: flex;
+justify-content: center;
+align-items: center;padding: 40px 20px;
+
+}
+
+
+/*محفظه اصلی */
+
+.login-container {
+width: 100%;
+max-width: 480px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* بخش شیشه ای کارت*/
+
+.login-card {
+    width: 100%;
+    padding: 45px 42px;
+    background: rgba(9, 35, 72, 0.48);
+    border: 1px solid rgba(135, 205, 255, 0.28);
+    border-radius: 25px;
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow:0 15px 60px rgba(0, 0, 0, 0.35),inset 0 1px 1px rgba(255, 255, 255, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+/* افکت روشن برای کارتی که درست کردیم */
+
+.login-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg,transparent, rgba(100, 190, 255, 0.8),transparent
+    );
+
+}
+
+
+/*هدر اصلی*/
+
+.login-header {
+
+    text-align: center;
+
+    margin-bottom: 38px;
+
+}
+
+.login-header h1 {
+
+    font-size: 30px;
+
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+    text-shadow:0 0 20px rgba(55, 165, 255, 0.4);
+
+}
+
+
+.login-header p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 2;
+    color: rgba(225, 240, 255, 0.75);
+}
+
+
+/*فرم واردشدن*/
+
+.login-form {
+
+    width: 100%;
+
+}
+/* یه جورایی همه ورودی ها */
+
+.login-input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    min-width: 0;
+
+}
+
+
+.login-input-group label {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #f0f7ff;
+
+}
+
+.login-input-group input {
+
+    width: 100%;
+    height: 51px;
+    padding: 0 15px;
+    border-radius: 11px;
+
+    outline: none;
+
+
+
+
+
+    border: 1px solid rgba(155, 205, 255, 0.28);
+
+    background: rgba(5, 20, 43, 0.48);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    transition: 0.3s ease;
+
+}
+
+.login-input-group input::placeholder {
+
+    color: rgba(205, 225, 245, 0.48);
+
+    font-size: 12px;
+
+}
+
+
+.login-input-group input:focus {
+    border-color: #45b4ff;
+    background: rgba(9, 42, 79, 0.7);
+    box-shadow:0 0 0 3px rgba(45, 165, 255, 0.12),0 0 15px rgba(45, 165, 255, 0.12);
+
+}
+
+/* دکمه فراموشی رمز عبور*/
+
+.forgot-password {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -8px;
+    margin-bottom: 27px;
+
+}
+.forgot-password a {
+    color: #69c5ff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+
+}
+
+
+.forgot-password a:hover {
+
+    color: #ffffff;
+    text-shadow:0 0 12px rgba(80, 180, 255, 0.6);
+
+}
+
+
+/* دکمه ورود */
+
+.login-submit {
+
+    width: 100%;
+    height: 53px;
+    border: none;
+    border-radius: 12px;
+
+
+
+
+
+
+
+    background: linear-gradient(
+        110deg,
+        #0878d1,
+        #159ff5,
+        #0878d1
+    );
+    background-size: 200% 100%;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.35s ease;
+    box-shadow:
+
+        0 6px 22px rgba(0, 130, 255, 0.25);
+
+}
+
+.login-submit:hover {
+    background-position: 100% 0;
+    transform: translateY(-2px);
+    box-shadow:
+        0 9px 28px rgba(0, 145, 255, 0.4);
+
+}
+.login-submit:active {
+    transform: translateY(0);
+}
+
+
+/*لینک ثبت نام  یادت باشه ابی کنی */
+
+.login-register-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 30px;
+    font-size: 13px;
+    color: rgba(225, 240, 255, 0.75);
+}
+
+
+.login-register-link a {
+
+    color: #65c2ff;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.2s ease;
+
+}
+
+
+.login-register-link a:hover {
+
+    color: #ffffff;
+    text-shadow:0 0 12px rgba(80, 180, 255, 0.6);
+}
+
+
+/*رسپانسیو برای تبلت فوییییییییی*/
+
+@media screen and (max-width: 768px) {
+
+    .login-page {
+        padding: 35px 18px;
+        background-attachment: scroll;
+    }
+
+    .login-container {
+
+        max-width: 460px;
+
+    }
+    .login-card {
+
+        padding: 40px 32px;
+
+        border-radius: 22px;
+
+    }
+
+    .login-header h1 {
+
+        font-size: 27px;
+
+    }
+
+}
+
+
+/* رسپانسیو برای موبایل*/
+
+@media screen and (max-width: 550px) {
+
+    .login-page {
+        padding: 22px 12px;
+        background-image:
+
+            linear-gradient(
+                rgba(2, 10, 27, 0.52),
+                rgba(2, 10, 27, 0.68)
+            ),
+
+            url("image/background-mobile.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+
+    }
+
+
+    .login-container {
+        width: 100%;
+
+    }
+
+    .login-card {
+
+        padding: 34px 23px;
+        border-radius: 19px;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+    }
+
+
+    .login-header {
+        margin-bottom: 30px;
+    }
+
+
+    .login-header h1 {
+        font-size: 24px;
+    }
+
+
+    .login-header p {
+        font-size: 12px;
+    }
+
+
+    .login-input-group {
+        gap: 9px;
+        margin-bottom: 21px;
+
+    }
+
+
+    .login-input-group label {
+        font-size: 13px;
+    }
+
+
+    .login-input-group input {
+        height: 48px;
+        font-size: 12px;
+
+    }
+
+
+    .forgot-password {
+        margin-bottom: 24px;
+
+    }
+
+
+    .forgot-password a {
+        font-size: 11px;
+
+    }
+
+
+    .login-submit {
+        height: 50px;
+        font-size: 14px;
+
+    }
+
+
+    .login-register-link {
+        margin-top: 25px;
+        font-size: 12px;
+    }
+
+}
+
+
+/*کد چسی برای گوشی های کوچیک رسپانسیو بشه */
+
+@media screen and (max-width: 360px) {
+
+    .login-page {
+        padding: 15px 9px;
+
+    }
+    .login-card {
+        padding: 28px 17px;
+
+    }
+
+    .login-header h1 {
+        font-size: 22px;
+
+    }
+    .login-header p {
+        font-size: 11px;
+    }
+    .login-register-link {
+        font-size: 11px;
+
+    }
+
+}
+
+
+/*دکمه نمایش گذرواژه*/
+
+.login-password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.login-password-wrapper input {
+    padding-left: 48px;
+}
+.login-password-wrapper button {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #65c2ff;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.login-password-wrapper button:hover {
+    color: #ffffff;
+    background: rgba(65, 170, 255, 0.12);
+    box-shadow: 0 0 12px rgba(65, 170, 255, 0.15);
+}
+
+.login-password-wrapper button svg {
+    width: 19px;
+    height: 19px;
+    transition: 0.2s ease;
+}
+
+.login-password-wrapper button:focus-visible {
+    outline: 2px solid #45b4ff;
+    outline-offset: 3px;
+}
+
+
+
+
+
+
+
+
+/*دسرسی داشتن چسی با عوش مصنوعی */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .login-card *,
+    .login-card *::before,
+    .login-card *::after {
+
+        transition: none !important;
+
+    }
+
+}
+
